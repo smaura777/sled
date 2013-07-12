@@ -11,16 +11,37 @@
     .slides {
     	width: 640px;
     	margin:auto;
-		
     }
     
     
+    
+    /* Swipe 2 required styles */
+
+.swipe {
+  overflow: hidden;
+  /** visibility: hidden; **/
+  position: relative;
+}
+.swipe-wrap {
+  overflow: hidden;
+  position: relative;
+}
+.swipe-wrap > div {
+  float:left;
+  width:100%;
+  position: relative;
+}
+
+/* END required styles */
     
   </style>
 
  
 </head>
 <body>
+
+<div id='mySwipe' style='max-width:644px;margin:0 auto' class='swipe'>
+  <div class='swipe-wrap'>
 
 
   <div class="slides">
@@ -240,6 +261,10 @@
    
   </div>
   
+  
+  
+  </div> <!-- swipe wrap -->
+</div>  <!-- swipe -->
   
   
    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
