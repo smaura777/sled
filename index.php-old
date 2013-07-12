@@ -1,0 +1,20 @@
+<?php
+  echo "PHP socket testing  <br />";
+  echo " " .$_SERVER['REMOTE_ADDR']. "<br />";
+  
+  $port = 5000;
+  $address = $_SERVER['REMOTE_ADDR'];
+  $socket = socket_create(AF_INET, SOCK_STREAM, SOL_TCP);
+  if ($socket && socket_connect($socket, $address, $port) ){
+    echo "Connected <br />";
+    
+    $data = socket_read($socket,1024,PHP_NORMAL_READ);
+    echo "Message from server : <br /> ".$data." <br />";
+    socket_close($socket);
+  }
+  else {
+    echo "Failed to conect <br />";
+  }
+  
+  
+?>

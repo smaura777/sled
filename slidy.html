@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>SWIPR</title>
+	<meta name="generator" content="BBEdit 10.5" />
+	<link href='style.css' rel='stylesheet'/>
+
+	<style type="text/css">
+	#main_wrap {
+		width: 640px;
+		margin: auto;
+		padding: 10px;
+		outline: 1px solid gray;
+		height: 1280px;
+		overflow: auto;
+	}
+	
+	ul {
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+	}
+	
+	li {
+		float: left;
+	}
+	
+	img {
+		/** 
+		width: 120px;
+		height: 80px;
+		**/
+		
+		margin-left: 2px;
+	}
+	
+	#slideshow {
+		
+		width: 1024px;
+		height: 90px;
+		
+	}
+	
+	#slideshow_wrap {
+	  outline: 1px solid red;
+	  width: 320px;
+	  /**overflow: hidden;**/
+	}
+	
+	
+	
+	
+	.swipe {
+  overflow: hidden;
+  visibility: hidden;
+  position: relative;
+}
+.swipe-wrap {
+  overflow: hidden;
+  position: relative;
+}
+.swipe-wrap > div {
+  float:left;
+  width:100%;
+  position: relative;
+}
+	
+	
+	
+	</style>
+</head>
+<body>
+
+<div id="main_wrap">
+	<div id="main">
+	
+	   <!--
+		<div id="slideshow_wrap">
+			<div id="slideshow">
+				<ul>
+					<li>  
+							<div class="thumb">
+								<img src="9229788746_0c266fc6a6_m.jpg" />
+							</div>
+					 </li>	
+					<li>
+						<div class="thumb">
+							<img src="9238365085_8eba238528_m.jpg" />
+						</div>
+					</li>
+					<li>
+						<div class="thumb">
+							<img src="6797650306_bbfa301fcb_m.jpg" />
+						</div>
+					</li>
+					<li>
+					    <div class="thumb">
+							<img src="9189528633_f5643f2d44_m.jpg" />
+						</div>
+					</li>
+					
+		     		<li>  
+							<div class="thumb">
+								<img src="9229788746_0c266fc6a6_m.jpg" />
+							</div>
+					 </li>	
+					<li>
+						<div class="thumb">
+							<img src="9238365085_8eba238528_m.jpg" />
+						</div>
+					</li>
+					<li>
+						<div class="thumb">
+							<img src="6797650306_bbfa301fcb_m.jpg" />
+						</div>
+					</li>
+					<li>
+					    <div class="thumb">
+							<img src="9189528633_f5643f2d44_m.jpg" />
+						</div>
+					</li>
+						
+				</ul>	
+	    	</div>
+		</div>
+		-->
+		
+		<div id='slider' style='max-width:500px;margin:0 auto' class='swipe'>
+          <div class='swipe-wrap'>
+            
+            <div>
+            	<img src="9189528633_f5643f2d44_m.jpg" />
+            	 <img src="6797650306_bbfa301fcb_m.jpg" />
+            	
+            </div>
+            <div>
+              <img src="6797650306_bbfa301fcb_m.jpg" />
+              <img src="9189528633_f5643f2d44_m.jpg" />
+            	 
+            	  
+            </div>
+            <div>
+              <img src="9189528633_f5643f2d44_m.jpg" />
+            	 <img src="6797650306_bbfa301fcb_m.jpg" />
+            	 
+            </div>
+            
+           </div>
+        </div>
+	
+		<div style='text-align:center;padding-top:20px;'>
+            <button onclick='mySwipe.prev()'>prev</button> 
+            <button onclick='mySwipe.next()'>next</button>
+       </div>
+   
+   
+		<div id="page_text">
+			<p>
+			  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nisi lectus, 
+			  pellentesque ac egestas id, varius a massa. Duis augue velit, mattis non commodo 
+			  pharetra, faucibus quis urna. Vivamus facilisis libero tellus, ac 
+			  sollicitudin magna pharetra nec. Phasellus id odio ac sapien lobortis
+			   condimentum nec a nibh. Nullam laoreet nulla a velit vulputate feugiat. 
+			   Proin eleifend semper turpis eu vehicula. Morbi sed nisi placerat ante eleifend
+			    pretium. In tincidunt tempus sollicitudin. Integer sed elit eget libero iaculis 
+			    semper vitae et dolor. Nam bibendum nibh turpis, in ornare enim luctus non. Vivamus 
+			    non ultricies turpis, ut ultricies quam. Donec non nisi ac ipsum sagittis interdum.
+			     Integer at eleifend turpis, nec venenatis metus. Vestibulum vel egestas nisi. 
+			     Morbi vestibulum, lorem non convallis semper, 
+			  tellus risus cursus nibh, a viverra arcu velit sit amet turpis. Cras eu odio 
+			  vitae dolor adipiscing placerat.
+			</p>
+			
+			<p>
+			  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nisi lectus, 
+			  pellentesque ac egestas id, varius a massa. Duis augue velit, mattis non commodo 
+			  pharetra, faucibus quis urna. Vivamus facilisis libero tellus, ac 
+			  sollicitudin magna pharetra nec. Phasellus id odio ac sapien lobortis
+			   condimentum nec a nibh. Nullam laoreet nulla a velit vulputate feugiat. 
+			   Proin eleifend semper turpis eu vehicula. Morbi sed nisi placerat ante eleifend
+			    pretium. In tincidunt tempus sollicitudin. Integer sed elit eget libero iaculis 
+			    semper vitae et dolor. Nam bibendum nibh turpis, in ornare enim luctus non. Vivamus 
+			    non ultricies turpis, ut ultricies quam. Donec non nisi ac ipsum sagittis interdum.
+			     Integer at eleifend turpis, nec venenatis metus. Vestibulum vel egestas nisi. 
+			     Morbi vestibulum, lorem non convallis semper, 
+			  tellus risus cursus nibh, a viverra arcu velit sit amet turpis. Cras eu odio 
+			  vitae dolor adipiscing placerat.
+			</p>
+			
+			<p>
+			  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nisi lectus, 
+			  pellentesque ac egestas id, varius a massa. Duis augue velit, mattis non commodo 
+			  pharetra, faucibus quis urna. Vivamus facilisis libero tellus, ac 
+			  sollicitudin magna pharetra nec. Phasellus id odio ac sapien lobortis
+			   condimentum nec a nibh. Nullam laoreet nulla a velit vulputate feugiat. 
+			   Proin eleifend semper turpis eu vehicula. Morbi sed nisi placerat ante eleifend
+			    pretium. In tincidunt tempus sollicitudin. Integer sed elit eget libero iaculis 
+			    semper vitae et dolor. Nam bibendum nibh turpis, in ornare enim luctus non. Vivamus 
+			    non ultricies turpis, ut ultricies quam. Donec non nisi ac ipsum sagittis interdum.
+			     Integer at eleifend turpis, nec venenatis metus. Vestibulum vel egestas nisi. 
+			     Morbi vestibulum, lorem non convallis semper, 
+			  tellus risus cursus nibh, a viverra arcu velit sit amet turpis. Cras eu odio 
+			  vitae dolor adipiscing placerat.
+			</p>
+			
+			<p>
+			  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nisi lectus, 
+			  pellentesque ac egestas id, varius a massa. Duis augue velit, mattis non commodo 
+			  pharetra, faucibus quis urna. Vivamus facilisis libero tellus, ac 
+			  sollicitudin magna pharetra nec. Phasellus id odio ac sapien lobortis
+			   condimentum nec a nibh. Nullam laoreet nulla a velit vulputate feugiat. 
+			   Proin eleifend semper turpis eu vehicula. Morbi sed nisi placerat ante eleifend
+			    pretium. In tincidunt tempus sollicitudin. Integer sed elit eget libero iaculis 
+			    semper vitae et dolor. Nam bibendum nibh turpis, in ornare enim luctus non. Vivamus 
+			    non ultricies turpis, ut ultricies quam. Donec non nisi ac ipsum sagittis interdum.
+			     Integer at eleifend turpis, nec venenatis metus. Vestibulum vel egestas nisi. 
+			     Morbi vestibulum, lorem non convallis semper, 
+			  tellus risus cursus nibh, a viverra arcu velit sit amet turpis. Cras eu odio 
+			  vitae dolor adipiscing placerat.
+			</p>
+			<p>
+			  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nisi lectus, 
+			  pellentesque ac egestas id, varius a massa. Duis augue velit, mattis non commodo 
+			  pharetra, faucibus quis urna. Vivamus facilisis libero tellus, ac 
+			  sollicitudin magna pharetra nec. Phasellus id odio ac sapien lobortis
+			   condimentum nec a nibh. Nullam laoreet nulla a velit vulputate feugiat. 
+			   Proin eleifend semper turpis eu vehicula. Morbi sed nisi placerat ante eleifend
+			    pretium. In tincidunt tempus sollicitudin. Integer sed elit eget libero iaculis 
+			    semper vitae et dolor. Nam bibendum nibh turpis, in ornare enim luctus non. Vivamus 
+			    non ultricies turpis, ut ultricies quam. Donec non nisi ac ipsum sagittis interdum.
+			     Integer at eleifend turpis, nec venenatis metus. Vestibulum vel egestas nisi. 
+			     Morbi vestibulum, lorem non convallis semper, 
+			  tellus risus cursus nibh, a viverra arcu velit sit amet turpis. Cras eu odio 
+			  vitae dolor adipiscing placerat.
+			</p>
+			
+			<p>
+			  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nisi lectus, 
+			  pellentesque ac egestas id, varius a massa. Duis augue velit, mattis non commodo 
+			  pharetra, faucibus quis urna. Vivamus facilisis libero tellus, ac 
+			  sollicitudin magna pharetra nec. Phasellus id odio ac sapien lobortis
+			   condimentum nec a nibh. Nullam laoreet nulla a velit vulputate feugiat. 
+			   Proin eleifend semper turpis eu vehicula. Morbi sed nisi placerat ante eleifend
+			    pretium. In tincidunt tempus sollicitudin. Integer sed elit eget libero iaculis 
+			    semper vitae et dolor. Nam bibendum nibh turpis, in ornare enim luctus non. Vivamus 
+			    non ultricies turpis, ut ultricies quam. Donec non nisi ac ipsum sagittis interdum.
+			     Integer at eleifend turpis, nec venenatis metus. Vestibulum vel egestas nisi. 
+			     Morbi vestibulum, lorem non convallis semper, 
+			  tellus risus cursus nibh, a viverra arcu velit sit amet turpis. Cras eu odio 
+			  vitae dolor adipiscing placerat.
+			</p>
+			<p>
+			  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nisi lectus, 
+			  pellentesque ac egestas id, varius a massa. Duis augue velit, mattis non commodo 
+			  pharetra, faucibus quis urna. Vivamus facilisis libero tellus, ac 
+			  sollicitudin magna pharetra nec. Phasellus id odio ac sapien lobortis
+			   condimentum nec a nibh. Nullam laoreet nulla a velit vulputate feugiat. 
+			   Proin eleifend semper turpis eu vehicula. Morbi sed nisi placerat ante eleifend
+			    pretium. In tincidunt tempus sollicitudin. Integer sed elit eget libero iaculis 
+			    semper vitae et dolor. Nam bibendum nibh turpis, in ornare enim luctus non. Vivamus 
+			    non ultricies turpis, ut ultricies quam. Donec non nisi ac ipsum sagittis interdum.
+			     Integer at eleifend turpis, nec venenatis metus. Vestibulum vel egestas nisi. 
+			     Morbi vestibulum, lorem non convallis semper, 
+			  tellus risus cursus nibh, a viverra arcu velit sit amet turpis. Cras eu odio 
+			  vitae dolor adipiscing placerat.
+			</p>
+			
+			<p>
+			  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nisi lectus, 
+			  pellentesque ac egestas id, varius a massa. Duis augue velit, mattis non commodo 
+			  pharetra, faucibus quis urna. Vivamus facilisis libero tellus, ac 
+			  sollicitudin magna pharetra nec. Phasellus id odio ac sapien lobortis
+			   condimentum nec a nibh. Nullam laoreet nulla a velit vulputate feugiat. 
+			   Proin eleifend semper turpis eu vehicula. Morbi sed nisi placerat ante eleifend
+			    pretium. In tincidunt tempus sollicitudin. Integer sed elit eget libero iaculis 
+			    semper vitae et dolor. Nam bibendum nibh turpis, in ornare enim luctus non. Vivamus 
+			    non ultricies turpis, ut ultricies quam. Donec non nisi ac ipsum sagittis interdum.
+			     Integer at eleifend turpis, nec venenatis metus. Vestibulum vel egestas nisi. 
+			     Morbi vestibulum, lorem non convallis semper, 
+			  tellus risus cursus nibh, a viverra arcu velit sit amet turpis. Cras eu odio 
+			  vitae dolor adipiscing placerat.
+			</p>
+			
+			<p>
+			  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nisi lectus, 
+			  pellentesque ac egestas id, varius a massa. Duis augue velit, mattis non commodo 
+			  pharetra, faucibus quis urna. Vivamus facilisis libero tellus, ac 
+			  sollicitudin magna pharetra nec. Phasellus id odio ac sapien lobortis
+			   condimentum nec a nibh. Nullam laoreet nulla a velit vulputate feugiat. 
+			   Proin eleifend semper turpis eu vehicula. Morbi sed nisi placerat ante eleifend
+			    pretium. In tincidunt tempus sollicitudin. Integer sed elit eget libero iaculis 
+			    semper vitae et dolor. Nam bibendum nibh turpis, in ornare enim luctus non. Vivamus 
+			    non ultricies turpis, ut ultricies quam. Donec non nisi ac ipsum sagittis interdum.
+			     Integer at eleifend turpis, nec venenatis metus. Vestibulum vel egestas nisi. 
+			     Morbi vestibulum, lorem non convallis semper, 
+			  tellus risus cursus nibh, a viverra arcu velit sit amet turpis. Cras eu odio 
+			  vitae dolor adipiscing placerat.
+			</p>
+			
+			<p>
+			  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nisi lectus, 
+			  pellentesque ac egestas id, varius a massa. Duis augue velit, mattis non commodo 
+			  pharetra, faucibus quis urna. Vivamus facilisis libero tellus, ac 
+			  sollicitudin magna pharetra nec. Phasellus id odio ac sapien lobortis
+			   condimentum nec a nibh. Nullam laoreet nulla a velit vulputate feugiat. 
+			   Proin eleifend semper turpis eu vehicula. Morbi sed nisi placerat ante eleifend
+			    pretium. In tincidunt tempus sollicitudin. Integer sed elit eget libero iaculis 
+			    semper vitae et dolor. Nam bibendum nibh turpis, in ornare enim luctus non. Vivamus 
+			    non ultricies turpis, ut ultricies quam. Donec non nisi ac ipsum sagittis interdum.
+			     Integer at eleifend turpis, nec venenatis metus. Vestibulum vel egestas nisi. 
+			     Morbi vestibulum, lorem non convallis semper, 
+			  tellus risus cursus nibh, a viverra arcu velit sit amet turpis. Cras eu odio 
+			  vitae dolor adipiscing placerat.
+			</p>
+			
+			<p>
+			  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nisi lectus, 
+			  pellentesque ac egestas id, varius a massa. Duis augue velit, mattis non commodo 
+			  pharetra, faucibus quis urna. Vivamus facilisis libero tellus, ac 
+			  sollicitudin magna pharetra nec. Phasellus id odio ac sapien lobortis
+			   condimentum nec a nibh. Nullam laoreet nulla a velit vulputate feugiat. 
+			   Proin eleifend semper turpis eu vehicula. Morbi sed nisi placerat ante eleifend
+			    pretium. In tincidunt tempus sollicitudin. Integer sed elit eget libero iaculis 
+			    semper vitae et dolor. Nam bibendum nibh turpis, in ornare enim luctus non. Vivamus 
+			    non ultricies turpis, ut ultricies quam. Donec non nisi ac ipsum sagittis interdum.
+			     Integer at eleifend turpis, nec venenatis metus. Vestibulum vel egestas nisi. 
+			     Morbi vestibulum, lorem non convallis semper, 
+			  tellus risus cursus nibh, a viverra arcu velit sit amet turpis. Cras eu odio 
+			  vitae dolor adipiscing placerat.
+			</p>
+			
+			<p>
+			  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nisi lectus, 
+			  pellentesque ac egestas id, varius a massa. Duis augue velit, mattis non commodo 
+			  pharetra, faucibus quis urna. Vivamus facilisis libero tellus, ac 
+			  sollicitudin magna pharetra nec. Phasellus id odio ac sapien lobortis
+			   condimentum nec a nibh. Nullam laoreet nulla a velit vulputate feugiat. 
+			   Proin eleifend semper turpis eu vehicula. Morbi sed nisi placerat ante eleifend
+			    pretium. In tincidunt tempus sollicitudin. Integer sed elit eget libero iaculis 
+			    semper vitae et dolor. Nam bibendum nibh turpis, in ornare enim luctus non. Vivamus 
+			    non ultricies turpis, ut ultricies quam. Donec non nisi ac ipsum sagittis interdum.
+			     Integer at eleifend turpis, nec venenatis metus. Vestibulum vel egestas nisi. 
+			     Morbi vestibulum, lorem non convallis semper, 
+			  tellus risus cursus nibh, a viverra arcu velit sit amet turpis. Cras eu odio 
+			  vitae dolor adipiscing placerat.
+			</p>
+			
+			
+		</div>
+		
+	</div>
+</div>
+
+
+
+
+
+
+
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src='swipe.js'></script>
+<script>
+
+// pure JS
+var elem = document.getElementById('slider');
+window.mySwipe = Swipe(elem, {
+  // startSlide: 4,
+  // auto: 3000,
+  continuous: true,
+  // disableScroll: true,
+  stopPropagation: true,
+  // callback: function(index, element) {},
+  // transitionEnd: function(index, element) {}
+});
+
+// with jQuery
+// window.mySwipe = $('#mySwipe').Swipe().data('Swipe');
+
+</script>
+
+
+</body>
+</html>
