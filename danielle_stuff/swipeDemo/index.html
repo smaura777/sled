@@ -1,0 +1,283 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.css">
+	<link rel="stylesheet" href="source/swipebox.css">
+	<link rel="stylesheet" href="style.css">
+	<style type="text/css">
+		.off{opacity:0.25;}
+		#outer{width:300px;}
+		.ui-panel-inner {
+			position: absolute;
+			top: 1px;
+			left: 0;
+			right: 0;
+			bottom: 0px;
+			-webkit-overflow-scrolling: touch;
+			
+		}
+		#popupPanel {
+			
+			border: 1px solid #000;
+			background: rgba(0,0,0,.5);
+		}
+		ul{
+			margin:1em 0;
+		}
+	</style>
+	<script src="lib/ios-orientationchange-fix.js"></script>
+<!--	<script src="lib/jquery-2.0.3.min.js"></script>-->
+	<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+	<script src="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.js"></script>
+	<!--<script src="source/iscroll.js"></script>-->
+	<script src="lib/jquery.isotope.min.js"></script>
+	<script src="source/jquery.swipebox.js"></script>
+	<script src="source/jquery.slides.min.js"></script>
+
+	<script type="text/javascript">
+		jQuery(function($) {
+			/*
+			var myScroll;
+			function loaded() {
+				setTimeout(function () {
+					myScroll = new iScroll('wrapper');
+				}, 100);
+			}
+			window.addEventListener('load', loaded, false);
+			*/
+			
+			
+			
+			/* Page Nav */
+			
+			
+    		$(document).bind("mobileinit", function(){
+			  $.mobile.touchOverflowEnabled = true;
+			});
+			
+			 $('#page1').on("swipeleft", function(){
+                $.mobile.changePage("#page2", { transition: "slide", changeHash: false });
+            });
+            $('#page2').on("swiperight", function(){
+                $.mobile.changePage("#page1", { transition: "slide", reverse: true, changeHash: false });
+            }); 
+			
+			/* Browse slider */
+			var itemStartWidth = $(".item").width();
+			var itemMarginRight = parseInt($(".item").css("marginRight"));
+			var itemMarginLeft = parseInt($(".item").css("marginLeft"));
+			var itemWidth = itemStartWidth + itemMarginRight + itemMarginLeft;
+			var numItems = $(".item").length;
+			
+			var innerWidth = itemWidth * numItems;
+			// Set width of sliding div
+			$("#inner").width(innerWidth);
+			
+			var slideWidth = $("#outer").width();
+			
+			function nextSlide(){
+				var origin = parseInt($("#inner").css("marginLeft"));
+				var lastPos = innerWidth - slideWidth;
+				if(-origin < lastPos ){
+					$("#inner").animate({
+						marginLeft: origin - slideWidth
+					  });
+				}
+			}
+			function prevSlide(){
+				var origin = parseInt($("#inner").css("marginLeft"));
+				if(-origin > 0 ){
+					$("#inner").animate({
+						marginLeft: origin + slideWidth
+					  });
+				}
+			}
+			
+			/* Swipe to Browse Galleries */
+			$("#outer").on( "swipeleft", forwardNav );
+			function forwardNav(event){
+				event.stopPropagation();
+				nextSlide();
+			}
+			$("#outer").on( "swiperight", backNav );
+			function backNav(event){
+				event.stopPropagation();
+				prevSlide();
+			}
+			
+			/* Tap to Browse Galleries*/
+			$("#next").click(function () {
+				nextSlide();
+			});
+			$("#prev").click(function () {
+				prevSlide();
+			});
+			
+			//alert(slideWidth);
+			
+			/* Dynamic Gallery */
+			$("#gallery1").click(function(e){
+				e.preventDefault();
+				$.swipebox([
+					{ href : 'http://swipebox.brutaldesign.com/assets/full/reine.jpg', title : 'Gallery #1 - caption 1' },
+					{ href : 'http://swipebox.brutaldesign.com/assets/full/nuke.jpg', title : 'Gallery #1 - caption 2' }
+				]);
+			});		
+			$("#gallery2").click(function(e){
+				e.preventDefault();
+				$.swipebox([
+					{ href : 'http://swipebox.brutaldesign.com/assets/full/leap.jpg', title : 'Gallery #2 - caption 1' },
+					{ href : 'http://swipebox.brutaldesign.com/assets/full/neptune.jpg', title : 'Gallery #2 - caption 2' }
+				]);
+			});
+			$("#gallery3").click(function(e){
+				e.preventDefault();
+				$.swipebox([
+					{ href : 'http://swipebox.brutaldesign.com/assets/full/nuke.jpg', title : 'Gallery #3 - caption 1' },
+					{ href : 'http://swipebox.brutaldesign.com/assets/full/reine.jpg', title : 'Gallery #3 - caption 2' },
+					{ href : 'http://swipebox.brutaldesign.com/assets/full/leap.jpg', title : 'Gallery #3 - caption 3' },
+					{ href : 'http://swipebox.brutaldesign.com/assets/full/neptune.jpg', title : 'Gallery #3 - caption 4' }
+				]);
+			});
+			
+		});
+	</script>
+	<script> 
+    
+     $(function(){
+      $("#slides2").slidesjs({
+        width: 300,
+        height: 200
+      });
+    });
+    
+    
+  </script>
+</head>
+<body>
+	<div id="page1" data-role="page">
+		<div data-role="panel" id="popupPanel" data-position="left" data-display="overlay" data-position-fixed="true" class="navWrap ui-pannel-inner">
+			<ul>
+				<li><a href="#">Link 1</a></li>
+				<li><a href="#">Link 2</a></li>
+			</ul>
+		</div>
+		<div data-role="panel" id="navPanel" data-position="right" data-display="push" data-position-fixed="false" class="navWrap">
+			<div id="wrapper" style="width:100%;position:absolute;top:0;left:0;z-index:1;">
+				<div id="scroller" data-iscroll="scroller">
+					<ul>
+						<li><a href="#">Link 1</a></li>
+						<li><a href="#">Link 2</a></li>
+						<li><a href="#">Link 3</a></li>
+						<li><a href="#">Link 4</a></li>
+					</ul>
+					<ul>
+						<li><a href="#">Link 1</a></li>
+						<li><a href="#">Link 2</a></li>
+						<li><a href="#">Link 3</a></li>
+						<li><a href="#">Link 4</a></li>
+					</ul>
+					<ul>
+						<li><a href="#">Link 1</a></li>
+						<li><a href="#">Link 2</a></li>
+						<li><a href="#">Link 3</a></li>
+						<li><a href="#">Link 4</a></li>
+					</ul>
+					<ul>
+						<li><a href="#">Link 1</a></li>
+						<li><a href="#">Link 2</a></li>
+						<li><a href="#">Link 3</a></li>
+						<li><a href="#">Link 4</a></li>
+					</ul>
+					<ul>
+						<li><a href="#">Link 1</a></li>
+						<li><a href="#">Link 2</a></li>
+						<li><a href="#">Link 3</a></li>
+						<li><a href="#">Link 4</a></li>
+					</ul>
+					<ul>
+						<li><a href="#">Link 1</a></li>
+						<li><a href="#">Link 2</a></li>
+						<li><a href="#">Link 3</a></li>
+						<li><a href="#">Link 4</a></li>
+					</ul>
+					<ul>
+						<li><a href="#">Link 1</a></li>
+						<li><a href="#">Link 2</a></li>
+						<li><a href="#">Link 3</a></li>
+						<li><a href="#">Link 4</a></li>
+					</ul>
+						<ul>
+						<li><a href="#">Link 1</a></li>
+						<li><a href="#">Link 2</a></li>
+						<li><a href="#">Link 3</a></li>
+						<li><a href="#">Link 4</a></li>
+					</ul>
+						<ul>
+						<li><a href="#">Link 1</a></li>
+						<li><a href="#">Link 2</a></li>
+						<li><a href="#">Link 3</a></li>
+						<li><a href="#">Link 4</a></li>
+					</ul>
+				</div>
+			</div>			
+		</div>
+		
+		<div data-role="header">
+			<h1>Page 1</h1>
+		</div>
+		<div data-role="content" class="container">
+			<a href="#popupPanel" data-role="button">Overlay Panel</a>
+			<a data-role="button" id="slideNav" href="#navPanel">See Menu</a>
+			<p>Swipe left to go the next page!</p>
+			<p>Swipe to browse galleries, and tap the highlighted thumbs to view a gallery.</p>
+			<div id="outer" class="gallery-wrap">
+				<div id="inner" class="slide">
+					<div class="item"><a id="gallery1" href="#"><img class="thumb" src="img/gallery1_thumb.png" /></a></div>
+					<div class="item"><a class="off" href="#"><img class="thumb" src="img/gallery2_thumb.png" /></a></div>
+					<div class="item"><a id="gallery3" href="#"><img class="thumb" src="img/gallery3_thumb.png" /></a></div>
+					<!-- slide 2 -->
+					<div class="item"><a class="off" href="#"><img class="thumb" src="img/gallery1_thumb.png" /></a></div>
+					<div class="item"><a id="gallery2" href="#"><img class="thumb" src="img/gallery2_thumb.png" /></a></div>
+					<div class="item"><a class="off" href="#"><img class="thumb" src="img/gallery3_thumb.png" /></a></div>
+				</div>
+			</div>
+			<div class="navlinks">
+				<p><a id="prev" href="#"><< prev</a></p>
+				<p><a id="next" href="#">next >></a></p>
+			</div>
+			<div class="text">
+			<p>
+			Curabitur eu est ligula. Quisque lobortis pulvinar risus, a aliquam nisi. Ut hendrerit metus eu neque eleifend tempor. Maecenas dapibus, urna sit amet condimentum molestie, nisl est hendrerit lorem, volutpat mollis risus mauris vitae lacus. Ut lorem lacus, vestibulum ut lectus ac, auctor rutrum tortor. Etiam a leo vel nisi pretium facilisis. Nullam elit dui, aliquam sed est vel, gravida condimentum velit. Morbi ultrices sit amet nibh nec ornare. Nunc in scelerisque quam, id adipiscing nulla. Nunc sit amet ipsum velit. Sed viverra suscipit felis sed facilisis. Integer tristique tortor ac enim feugiat venenatis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur eget nunc vitae ante interdum molestie eu non risus. In tristique lectus sit amet magna congue consequat.
+			</p>
+			<p>
+			Duis bibendum posuere blandit. In volutpat tortor ullamcorper eros ullamcorper, at faucibus sapien venenatis. Morbi dictum pretium dictum. Aliquam porttitor lorem non justo laoreet, non vehicula lacus suscipit. Suspendisse faucibus vel arcu quis vulputate. Nulla tempus sollicitudin posuere. Mauris fringilla ullamcorper aliquet. Etiam sit amet accumsan velit. Aenean gravida ultricies mi ut eleifend. In urna ipsum, euismod non massa vitae, condimentum faucibus elit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nam ut diam non risus accumsan volutpat. Mauris vestibulum nibh id semper facilisis. Mauris congue aliquam nunc.
+			</p>
+			<p>
+			Aliquam tincidunt nisl eu tortor adipiscing, quis condimentum nisl imperdiet. Pellentesque dignissim malesuada ligula, eu vehicula lacus pulvinar a. Quisque eu varius leo. Etiam hendrerit sapien id porttitor convallis. Praesent sollicitudin malesuada massa dapibus tincidunt. Sed nibh ante, scelerisque rhoncus nisi eu, accumsan dapibus nibh. Sed ut mi dictum, tincidunt justo eu, suscipit orci. Vivamus consequat libero tellus, eu placerat ante accumsan in. Interdum et malesuada fames ac ante ipsum primis in faucibus. Cras ornare tellus eu enim condimentum, at ornare eros facilisis. Nulla vulputate laoreet suscipit. Sed tristique mauris dui, ut mollis erat sollicitudin ac. Nulla eget molestie elit, quis commodo enim.
+			</p>
+			</div>
+		</div>
+	</div>	
+	<div id="page2"  data-role="page">
+		<div data-role="header">
+			<h1>Page 2</h1>
+		</div>
+		<p>Swipe right to go back!</p>
+		<div id="slides2" style=" width:300px; border: 2px solid black; "> 
+            <div class="thumb" style="width:300px; height:200px;">
+		     <img style="width:300px; height:200px;" src="9229788746_0c266fc6a6_m.jpg" />
+	        </div>
+	        <div class="thumb"  style="width:300px; height:200px;">
+		     <img style="width:300px; height:200px;" src="9238365085_8eba238528_m.jpg" />
+	       </div>
+	       <div class="thumb" style="width:300px; height:200px;">
+		     <img style="width:300px; height:200px;" src="9189528633_f5643f2d44_m.jpg" />
+	       </div>
+	      
+	   </div>
+	</div>
+</body>
+</html>

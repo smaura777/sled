@@ -10,5 +10,5 @@ logs
 results
 
 npm-debug.log
-
+__MACOSX/
 .DS_Store
