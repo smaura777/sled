@@ -1,0 +1,181 @@
+<!doctype html>
+<head>
+   <title>Slideout</title>  
+   <meta name="viewport" content="width=device-width, maximum-scale=1.0">
+
+<style>
+   body {
+   	   padding:0;
+   	   margin: 0;	
+   }
+   
+   
+    #menu_wrap2 {
+    background-color: red;
+  }
+   
+  .page_container {
+    width: 320px;
+    overflow: hide;
+    position: relative;
+     outline: 1px solid green;
+  }
+  
+  .page_content {
+    width:320px;
+    height: 480px;
+    background-color: #efefef;
+    position: absolute;
+    z-index: 1000;
+    top: 0;
+    left:0;
+    
+  }
+  
+  #content_block_wrap {
+      width: 320px;
+      height: 480px;
+      overflow: auto;
+     
+  }
+  
+  #menu_view {
+    width: 320px;
+    height: 480px;
+    background-color: #000;
+    color: #fff;
+    position: absolute;
+    top: 0;
+    left:0;
+     overflow: auto;
+     z-index: 1;
+  }
+  
+  
+  .tester {
+    outline : 1px solid red;
+    width: 200px;
+    float: right;
+  }
+ 
+  button {
+     float: right;
+  }
+ 
+</style>
+
+</head>
+<body>
+  <div class="page_container">
+    <div id="menu_view">
+      <div class="tester">
+		<h4> Menu </h4>
+		<h5>Home</h5>
+		<h5>Sports</h5>
+		<h5>Home</h5>
+		<h5>Sports</h5>
+		<h5>Home</h5>
+		
+		<h5>Home</h5>
+		<h5>Sports</h5>
+		<h5>Home</h5>
+		<h5>Sports</h5>
+		<h5>Home</h5>
+		
+		
+		<h5>Home</h5>
+		<h5>Sports</h5>
+		<h5>Home</h5>
+		<h5>Sports</h5>
+		<h5>Home</h5>
+		
+		<h5>Home</h5>
+		<h5>Sports</h5>
+		<h5>Home</h5>
+		<h5>Sports</h5>
+		<h5>Home</h5>
+		
+		
+		<h5>Home</h5>
+		<h5>Sports</h5>
+		<h5>Home</h5>
+		<h5>Sports</h5>
+		<h5>Home</h5>
+		
+		</div> <!-- tester -->
+    </div>
+
+    <div class="page_content">
+       <button onclick="javascript:showMenu();"> Menu </button>
+      <div id="content_block_wrap"> 
+        <div class="content_block">
+              <h3> Content block</h3> 
+              <p>
+			  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nisi lectus, 
+			  pellentesque ac egestas id, varius a massa. Duis augue velit, mattis non commodo 
+			  pharetra, faucibus quis urna. Vivamus facilisis libero tellus, ac 
+			  sollicitudin magna pharetra nec. Phasellus id odio ac sapien lobortis
+			   condimentum nec a nibh. Nullam laoreet nulla a velit vulputate feugiat. 
+			   Proin eleifend semper turpis eu vehicula. Morbi sed nisi placerat ante eleifend
+			    pretium. In tincidunt tempus sollicitudin. Integer sed elit eget libero iaculis 
+			    semper vitae et dolor. Nam bibendum nibh turpis, in ornare enim luctus non. Vivamus 
+			    non ultricies turpis, ut ultricies quam. Donec non nisi ac ipsum sagittis interdum.
+			     Integer at eleifend turpis, nec venenatis metus. Vestibulum vel egestas nisi. 
+			     Morbi vestibulum, lorem non convallis semper, 
+			  tellus risus cursus nibh, a viverra arcu velit sit amet turpis. Cras eu odio 
+			  vitae dolor adipiscing placerat.
+			</p>
+        </div>
+        
+        
+         <div class="content_block">
+              <h3> Content block</h3> 
+              <p>
+			  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nisi lectus, 
+			  pellentesque ac egestas id, varius a massa. Duis augue velit, mattis non commodo 
+			  pharetra, faucibus quis urna. Vivamus facilisis libero tellus, ac 
+			  sollicitudin magna pharetra nec. Phasellus id odio ac sapien lobortis
+			   condimentum nec a nibh. Nullam laoreet nulla a velit vulputate feugiat. 
+			   Proin eleifend semper turpis eu vehicula. Morbi sed nisi placerat ante eleifend
+			    pretium. In tincidunt tempus sollicitudin. Integer sed elit eget libero iaculis 
+			    semper vitae et dolor. Nam bibendum nibh turpis, in ornare enim luctus non. Vivamus 
+			    non ultricies turpis, ut ultricies quam. Donec non nisi ac ipsum sagittis interdum.
+			     Integer at eleifend turpis, nec venenatis metus. Vestibulum vel egestas nisi. 
+			     Morbi vestibulum, lorem non convallis semper, 
+			  tellus risus cursus nibh, a viverra arcu velit sit amet turpis. Cras eu odio 
+			  vitae dolor adipiscing placerat.
+			</p>
+        </div>
+        </div> <!-- wrap --->
+        
+    </div>
+    
+    <div class="offscreen_menu">
+    
+    </div>
+    
+  </div>
+  <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+  <script type="text/javascript">
+    function showMenu(){
+      
+      //alert('Menu');
+    
+     if ($('.page_content').css("left") == '-200px'){
+           $('.page_content').animate({
+      	 left: '0px'	
+      },200, function(){});
+     }
+     else {
+      
+      
+      $('.page_content').animate({
+      	 left: '-200px'	
+      },200, function(){});
+      
+    }
+ }
+  </script>
+</body>
+</html>    
+  
